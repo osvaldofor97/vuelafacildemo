@@ -19,5 +19,9 @@ class VuelafacildemoApplicationTests {
             ciudades guardado = servicio.crearCiudad(c);
             Assertions.assertTrue(guardado.getId()>0,"Error, no se pudo guardar nueva ciudad");
 	}
+        
+        @Test
+        void verificacionActualizarCiudades(){
+        }
 
 }
