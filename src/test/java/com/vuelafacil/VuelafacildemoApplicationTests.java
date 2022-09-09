@@ -23,5 +23,4 @@ class VuelafacildemoApplicationTests {
             },"No se pudo crear una nueva ciudad");
 	}
         
-
 }
