@@ -13,8 +13,11 @@ public class ciudades {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     
-    @Column(name="nombre_ciudad", length=45, nullable=false, unique=true)
-    private String nombre_ciudad;
+    @Column(name="nombreciudad", length=45, nullable=false, unique=true)
+    private String nombreciudad;
+    
+    @Column(name="descripcionciudad", length=45, nullable=false, unique=true)
+    private String descripcionciudad;
     
     @Column(name="habilitado", columnDefinition="TINYINT", nullable=false)
     private boolean habilitado;
@@ -22,15 +25,17 @@ public class ciudades {
     public ciudades() {
     }
 
-    public ciudades(String nombre_ciudad, boolean habilitado) {
-        this.nombre_ciudad = nombre_ciudad;
+    public ciudades(String nombreciudad, String descripcionciudad ,boolean habilitado) {
+        this.nombreciudad = nombreciudad;
         this.habilitado = habilitado;
+        this.descripcionciudad=descripcionciudad;
     }
 
-    public ciudades(int id, String nombre_ciudad, boolean habilitado) {
+    public ciudades(int id, String nombreciudad, String descripcionciudad ,boolean habilitado) {
         this.id = id;
-        this.nombre_ciudad = nombre_ciudad;
+        this.nombreciudad = nombreciudad;
         this.habilitado = habilitado;
+        this.descripcionciudad=descripcionciudad;
     }
 
     public int getId() {
@@ -41,12 +46,20 @@ public class ciudades {
         this.id = id;
     }
 
-    public String getNombre_ciudad() {
-        return nombre_ciudad;
+    public String getNombreciudad() {
+        return nombreciudad;
     }
 
-    public void setNombre_ciudad(String nombre_ciudad) {
-        this.nombre_ciudad = nombre_ciudad;
+    public void setNombreciudad(String descripcion_ciudad) {
+        this.nombreciudad = nombreciudad;
+    }
+    
+    public String getDescripcionciudad() {
+        return descripcionciudad;
+    }
+
+    public void setDescripcionciudad(String descripcion_ciudad) {
+        this.descripcionciudad = descripcionciudad;
     }
 
     public boolean isHabilitado() {

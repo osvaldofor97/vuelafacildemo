@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IciudadesRepository extends JpaRepository <ciudades,Integer>{
     
-    public List<ciudades> findByNombreContaining(String Criterio);
+    public List<ciudades> findByNombreciudadContaining(String Criterio);
 }

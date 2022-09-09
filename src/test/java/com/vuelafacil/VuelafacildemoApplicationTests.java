@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 @SpringBootTest
 class VuelafacildemoApplicationTests {
         
@@ -15,13 +16,12 @@ class VuelafacildemoApplicationTests {
         
 	@Test
 	void verificacionCrearCiudades() {
-            ciudades c = new ciudades("Bogotá",true);
+            ciudades c = new ciudades("Medellín","Ciudad de la eterna primavera",true);
             ciudades guardado = servicio.crearCiudad(c);
-            Assertions.assertTrue(guardado.getId()>0,"Error, no se pudo guardar nueva ciudad");
+            Assertions.assertDoesNotThrow(()->{
+                servicio.crearCiudad(c);
+            },"No se pudo crear una nueva ciudad");
 	}
         
-        @Test
-        void verificacionActualizarCiudades(){
-        }
 
 }

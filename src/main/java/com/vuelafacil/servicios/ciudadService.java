@@ -28,7 +28,7 @@ public class ciudadService {
     }
     
     public List<ciudades> consultarCiudad(String criterio){
-         List<ciudades> listac = repo.findByNombreContaining(criterio);
+         List<ciudades> listac = repo.findByNombreciudadContaining(criterio);
          return listac;
     }
     
