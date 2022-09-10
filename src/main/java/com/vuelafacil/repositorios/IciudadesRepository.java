@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface IciudadesRepository extends JpaRepository <ciudades,Integer>{
     
     public List<ciudades> findByNombreciudadContaining(String Criterio);
+    public List<ciudades> findByHabilitadoTrue();
 }

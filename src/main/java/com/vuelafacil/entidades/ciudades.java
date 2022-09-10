@@ -9,9 +9,9 @@ import javax.persistence.Id;
 @Entity(name="tciudades")
 public class ciudades {
     @Id
-    @Column(name="id")
+    @Column(name="idciudades")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    private int idciudades;
     
     @Column(name="nombreciudad", length=45, nullable=false, unique=true)
     private String nombreciudad;
@@ -31,19 +31,19 @@ public class ciudades {
         this.descripcionciudad=descripcionciudad;
     }
 
-    public ciudades(int id, String nombreciudad, String descripcionciudad ,boolean habilitado) {
-        this.id = id;
+    public ciudades(int idciudades, String nombreciudad, String descripcionciudad ,boolean habilitado) {
+        this.idciudades = idciudades;
         this.nombreciudad = nombreciudad;
         this.habilitado = habilitado;
         this.descripcionciudad=descripcionciudad;
     }
 
-    public int getId() {
-        return id;
+    public int getIdciudades() {
+        return idciudades;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdciudades(int id) {
+        this.idciudades = idciudades;
     }
 
     public String getNombreciudad() {

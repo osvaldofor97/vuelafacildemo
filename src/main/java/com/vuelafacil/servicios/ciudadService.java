@@ -18,8 +18,8 @@ public class ciudadService {
     public ciudades actualizarCiudad(ciudades c){
          return repo.save(c);
     }
-    public ciudades consultarCiudad(int id){
-         return repo.findById(id).get();
+    public ciudades consultarCiudad(int idciudades){
+         return repo.findById(idciudades).orElse(null);
     }
     
     public List<ciudades> consultarCiudad(){
@@ -29,6 +29,11 @@ public class ciudadService {
     
     public List<ciudades> consultarCiudad(String criterio){
          List<ciudades> listac = repo.findByNombreciudadContaining(criterio);
+         return listac;
+    }
+    
+    public List<ciudades> consultarCiudadesHabilitadas(){
+         List<ciudades> listac = repo.findByHabilitadoTrue();
          return listac;
     }
     
