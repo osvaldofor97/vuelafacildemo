@@ -3,8 +3,17 @@ package com.vuelafacil.controladores;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+* index.html            /
+* listaCiudades.html    /ciudades
+* formCiudades.html     /ciudades/form/{id}
+* 
+*/
+
+
 @Controller
-public class ControladorPrincipal {
+public class CiudadesController {
+    
     @GetMapping("/")
     public String cargarIndex(){
         return "index";
@@ -13,5 +22,10 @@ public class ControladorPrincipal {
     @GetMapping("/ciudades")
     public String cargarCiudades(){
         return "listaCiudades";
+    }
+    
+    @GetMapping("/ciudades/form")
+    public String cargarFormCiudades(){
+        return "formCiudades";
     }
 }
