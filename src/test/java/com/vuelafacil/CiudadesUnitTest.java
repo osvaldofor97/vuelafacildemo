@@ -18,9 +18,9 @@ class CiudadesUnitTest {
         private ciudadService servicio;
         
 	@Test
-        @Disabled("Metodo ya probado")
+        @Disabled("Ya probada")
 	void verificacionCrearCiudades() {
-            ciudades c = new ciudades("Barranquilla","La puerta de oro",true);
+            ciudades c = new ciudades("Cartagena","La ciudad amurallada",true);
             ciudades guardado = servicio.crearCiudad(c);
             Assertions.assertDoesNotThrow(()->{
                 servicio.crearCiudad(c);

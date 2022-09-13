@@ -51,7 +51,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Habilitado</th>
-                        <!--<th scope="col">Acciones</th> -->
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,11 +60,10 @@
                         <td th:text="${ciudad.nombreciudad}">...</td>
                         <td th:text="${ciudad.descripcionciudad}">...</td>
                         <td th:text="${ciudad.habilitado}">...</td>
-                        <!--<td>
-                            <a th:href="${'/ciudades/form/'+ ciudad.idciudades"}>Editar</a>
-                            <a th:href="${'/ciudades/eliminar/'+ ciudad.idciudades"}>Eliminar</a>
-                        </td> -->
-                        <!--<td></td> -->
+                        <td>
+                            <a th:href="${'/ciudades/form/'+ ciudad.idciudades}">Editar</a>
+                            <a th:href="${'/ciudades/eliminar/'+ ciudad.idciudades}">Eliminar</a>
+                        </td>
                     </tr>
                     <tr th:if="${#lists.isEmpty(ciudades)}">
                         <td colspan="4">No se encontraron registros</td>

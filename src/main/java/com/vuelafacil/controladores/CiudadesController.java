@@ -36,6 +36,7 @@ public class CiudadesController {
             modelo.addAttribute("ciudades",servicio.consultarCiudad());
         }else{
             modelo.addAttribute("ciudades",servicio.consultarCiudad(criterio));
+            modelo.addAttribute("criterio",criterio);
         }
         return "listaciudades";
     }
@@ -54,12 +55,12 @@ public class CiudadesController {
     }
     
     @PostMapping("/ciudades")
-    public String guardarCiudad(@ModelAttribute ciudades c){
+    public String guardarCiudad(@ModelAttribute("ciudad") ciudades c){
         servicio.crearCiudad(c);
         return "redirect:/ciudades";
     }
     
-    @GetMapping("/ciudades/form/{idciudades}")
+    @GetMapping("/ciudades/eliminar/{idciudades}")
     public String eliminarCiudad(@PathVariable int idciudades){
         ciudades c = servicio.consultarCiudad(idciudades);
         servicio.eliminarCiudad(c);

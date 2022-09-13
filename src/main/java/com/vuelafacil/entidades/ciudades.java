@@ -16,7 +16,7 @@ public class ciudades {
     @Column(name="nombreciudad", length=45, nullable=false, unique=true)
     private String nombreciudad;
     
-    @Column(name="descripcionciudad", length=45, nullable=false, unique=true)
+    @Column(name="descripcionciudad", length=45, nullable=false, unique=false)
     private String descripcionciudad;
     
     @Column(name="habilitado", columnDefinition="TINYINT", nullable=false)
