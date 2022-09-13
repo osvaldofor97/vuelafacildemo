@@ -1,6 +1,6 @@
 package com.vuelafacil.entidades;
 
 
-public class aeropuertos {
+public class Aeropuerto {
     
 }

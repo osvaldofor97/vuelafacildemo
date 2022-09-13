@@ -1,5 +1,5 @@
 package com.vuelafacil.entidades;
 
-public class maletas {
+public class Maleta {
     
 }

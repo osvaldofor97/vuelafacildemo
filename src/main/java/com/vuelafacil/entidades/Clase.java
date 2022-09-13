@@ -9,6 +9,6 @@ package com.vuelafacil.entidades;
  *
  * @author User
  */
-public class clases {
+public class Clase {
     
 }
