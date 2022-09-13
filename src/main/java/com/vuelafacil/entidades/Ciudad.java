@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity(name="tciudades")
-public class ciudades {
+public class Ciudad {
     @Id
     @Column(name="idciudades")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -16,22 +16,22 @@ public class ciudades {
     @Column(name="nombreciudad", length=45, nullable=false, unique=true)
     private String nombreciudad;
     
-    @Column(name="descripcionciudad", length=45, nullable=false, unique=false)
+    @Column(name="descripcionciudad", length=45, nullable=true, unique=false)
     private String descripcionciudad;
     
     @Column(name="habilitado", columnDefinition="TINYINT", nullable=false)
     private boolean habilitado;
 
-    public ciudades() {
+    public Ciudad() {
     }
 
-    public ciudades(String nombreciudad, String descripcionciudad ,boolean habilitado) {
+    public Ciudad(String nombreciudad, String descripcionciudad ,boolean habilitado) {
         this.nombreciudad = nombreciudad;
         this.habilitado = habilitado;
         this.descripcionciudad=descripcionciudad;
     }
 
-    public ciudades(int idciudades, String nombreciudad, String descripcionciudad ,boolean habilitado) {
+    public Ciudad(int idciudades, String nombreciudad, String descripcionciudad ,boolean habilitado) {
         this.idciudades = idciudades;
         this.nombreciudad = nombreciudad;
         this.habilitado = habilitado;

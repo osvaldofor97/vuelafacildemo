@@ -1,6 +1,6 @@
 package com.vuelafacil.controladores;
 
-import com.vuelafacil.entidades.ciudades;
+import com.vuelafacil.entidades.Ciudad;
 import com.vuelafacil.servicios.ciudadService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ public class CiudadesWebController {
     private ciudadService servicio;
     
     @GetMapping("/api/ciudades")
-    public ResponseEntity<List<ciudades>> consultarGeneros(){
-        List<ciudades> listac = servicio.consultarCiudad();
+    public ResponseEntity<List<Ciudad>> consultarGeneros(){
+        List<Ciudad> listac = servicio.consultarCiudad();
         return new ResponseEntity<>(listac, HttpStatus.OK);
     }
 }

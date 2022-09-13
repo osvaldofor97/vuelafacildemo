@@ -1,6 +1,6 @@
 package com.vuelafacil;
 
-import com.vuelafacil.entidades.ciudades;
+import com.vuelafacil.entidades.Ciudad;
 import com.vuelafacil.servicios.ciudadService;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
@@ -20,8 +20,8 @@ class CiudadesUnitTest {
 	@Test
         @Disabled("Ya probada")
 	void verificacionCrearCiudades() {
-            ciudades c = new ciudades("Cartagena","La ciudad amurallada",true);
-            ciudades guardado = servicio.crearCiudad(c);
+            Ciudad c = new Ciudad("Cartagena","La ciudad amurallada",true);
+            Ciudad guardado = servicio.crearCiudad(c);
             Assertions.assertDoesNotThrow(()->{
                 servicio.crearCiudad(c);
             },"No se pudo crear una nueva ciudad");
@@ -29,7 +29,7 @@ class CiudadesUnitTest {
         
         @Test
         void verificarNoPoderCrearUnaCiudadRepetida(){
-            ciudades c = new ciudades("Barranquilla","La puerta de oro",true);
+            Ciudad c = new Ciudad("Barranquilla","La puerta de oro",true);
             Assertions.assertThrows(DataIntegrityViolationException.class, () ->{
                 servicio.crearCiudad(c);
             },"No se genero ninguna excepcion en la base de datos");
@@ -37,7 +37,7 @@ class CiudadesUnitTest {
         
         @Test
         void verificarSiNoSeGuardanGenerosInvalidos(){
-            ciudades c = new ciudades(null,null,false);
+            Ciudad c = new Ciudad(null,null,false);
             Assertions.assertThrows(DataIntegrityViolationException.class, () ->{
                 servicio.crearCiudad(c);
             },"No se genero ninguna excepcion en la base de datos");
@@ -45,25 +45,25 @@ class CiudadesUnitTest {
         
         @Test
         void verificarSiSePuedenConsultarTodasLasCiudades(){
-            List<ciudades> listac = servicio.consultarCiudad();
+            List<Ciudad> listac = servicio.consultarCiudad();
             Assertions.assertTrue(listac.size()>0,"No se consultaron las ciudades");
         }
         
         @Test
         void verificarSiSePuedeConsultarUnaCiudadExistentePorID(){
-            ciudades c = servicio.consultarCiudad(1);
+            Ciudad c = servicio.consultarCiudad(1);
             Assertions.assertNotNull(c,"No se pudo consultar genero");
         }
         
         @Test
         void verificarSiSePuedeConsultarUnaCiudadExistentePorSuNombre(){
-            List<ciudades> listac = servicio.consultarCiudad("Bogotá");
+            List<Ciudad> listac = servicio.consultarCiudad("Bogotá");
             Assertions.assertTrue(listac.size()>0,"No se pudo consultar ciudad");
         }
         
         @Test
         void verificarSiSePuedeConsultarUnaCiudadNoExistentePorID(){
-            ciudades c = servicio.consultarCiudad(800000);
+            Ciudad c = servicio.consultarCiudad(800000);
             Assertions.assertNull(c,"No se pudo consultar genero");
         }
 }

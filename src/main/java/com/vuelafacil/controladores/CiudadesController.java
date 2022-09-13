@@ -1,6 +1,6 @@
 package com.vuelafacil.controladores;
 
-import com.vuelafacil.entidades.ciudades;
+import com.vuelafacil.entidades.Ciudad;
 import com.vuelafacil.servicios.ciudadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
 * index.html            /
-* listaCiudades.html    /ciudades
-* formCiudades.html     /ciudades/form/{id}
+ listaCiudades.html    /Ciudad
+ formCiudades.html     /Ciudad/form/{id}
 * 
 */
 
@@ -43,26 +43,28 @@ public class CiudadesController {
     
     @GetMapping("/ciudades/form")
     public String cargarFormCiudades(Model modelo){
-        modelo.addAttribute("ciudad", new ciudades());
+        Ciudad c = new Ciudad();
+        modelo.addAttribute("ciudad", c);
         return "formciudades";
     }
     
     @GetMapping("/ciudades/form/{idciudades}")
     public String cargarFormCiudades(Model modelo, @PathVariable int idciudades){
-        ciudades c = servicio.consultarCiudad(idciudades);
+        Ciudad c = servicio.consultarCiudad(idciudades);
         modelo.addAttribute("ciudad",c);
         return "formciudades";
     }
     
     @PostMapping("/ciudades")
-    public String guardarCiudad(@ModelAttribute("ciudad") ciudades c){
+    public String guardarCiudad(@ModelAttribute("ciudad") Ciudad c){
+        System.out.println(c.getDescripcionciudad());
         servicio.crearCiudad(c);
         return "redirect:/ciudades";
     }
     
     @GetMapping("/ciudades/eliminar/{idciudades}")
     public String eliminarCiudad(@PathVariable int idciudades){
-        ciudades c = servicio.consultarCiudad(idciudades);
+        Ciudad c = servicio.consultarCiudad(idciudades);
         servicio.eliminarCiudad(c);
         return "redirect:/ciudades";
     }
