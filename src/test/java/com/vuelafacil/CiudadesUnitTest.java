@@ -1,7 +1,7 @@
 package com.vuelafacil;
 
 import com.vuelafacil.entidades.Ciudad;
-import com.vuelafacil.servicios.ciudadService;
+import com.vuelafacil.servicios.CiudadService;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -15,7 +15,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 class CiudadesUnitTest {
         
         @Autowired
-        private ciudadService servicio;
+        private CiudadService servicio;
         
 	@Test
         @Disabled("Ya probada")
