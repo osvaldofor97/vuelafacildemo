@@ -34,7 +34,78 @@
                 </div>
             </nav>
         </div>
-        <h1 align="Center">Vuelafacil.com</h1>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <div class="bg-image img-fluid d-flex justify-content-center align-items-center" 
+        style="background-image: url('https://sergimateo.com/wp-content/2016/08/viajar-vivir-1.jpg');
+        height: 60vh;
+        "
+        >
+        <h1 class="text-white">Vuelafacil.com</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form action="/ciudades" th:object="${ciudad}" method="post">
+            <div class="row">
+            <div>
+                <!--<label for="idciudades">Id</label>-->
+                <input type="hidden" th:field="*{idciudades}" id="idciudades" name="idciudades">
+            </div>
+            <div class="col-sm">
+            <label for="start">Start date:</label>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2030-12-31">
+    </div>
+            <div class="col-sm">
+                <label for="nombreciudad">Nombre ciudad:</label>
+                <input type="text" th:field="*{nombreciudad}" id="nombreciudad" name="nombreciudad" maxlength="45" required>
+            </div>
+            <div class="col-sm">
+                <label for="descripcionciudad">Descripción ciudad:</label>
+                <input type="text" th:field="*{descripcionciudad}" id="descripcionciudad" name="descripcionciudad" maxlength="45" required>
+            </div>
+            <div class="col-sm">
+                <input type="submit" value="Buscar">
+            </div>
+            <div class="col-sm">
+                <a href="/ciudades">Cancelar</a>
+            </div>
+            </div>
+        </form><br>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="card-group">
+        <div class="card">
+          <img src="https://elviajerofeliz.com/wp-content/uploads/2019/05/Qu%C3%A9-ver-en-Castilla-y-Le%C3%B3n-Alc%C3%A1zar-de-Segovia.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Segovia</h5>
+            <p class="card-text">es una ciudad que se puede visitar en un solo día. En ella podrías apreciar sus increíbles arquitecturas como el Acueducto romano, la Catedral y el Alcázar. Lo mejor de todo es que está situada a menos de 100 km de Madrid.</p>
+            <p class="card-text"><small class="text-muted">Vamos a Segovia</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://elviajerofeliz.com/wp-content/uploads/2018/02/Granada.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Granada</h5>
+            <p class="card-text">Ubicada en el sur español, Granada es una ciudad maravillosa que captura el corazón de todos quienes la visitan. Se caracteriza por ser mágica e ideal para vivir las mejores experiencias en España. Sus paisajes son inolvidables y sus sitios históricos la han convertido en una de las ciudades más bonitas de España.</p>
+            <p class="card-text"><small class="text-muted">Vamos a Granada</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://elviajerofeliz.com/wp-content/uploads/2019/05/Qu%C3%A9-ver-en-Castilla-La-Mancha-Alc%C3%A1zar-de-Toledo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Toledo</h5>
+            <p class="card-text">Toledo también es conocida como la «ciudad de las tres culturas» por su historia. Es un destino que por ninguna razón te puedes perder; además de ser una de las ciudades más bonitas de España. Sus calles adoquinadas te dejarán sin aliento y no podrás olvidar la experiencia. Además, sus iglesias, sinagogas y mezquitas se mantienen intactas y son un impresionante legado de la mezcla de varias culturas.</p>
+            <p class="card-text"><small class="text-muted">Vamos a Toledo</small></p>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     </body>
 </html>
